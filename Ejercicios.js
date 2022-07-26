@@ -13,6 +13,24 @@ function cacheFunction(cb) {
 
 }
 
+function cacheFunction(cb) {
+    var cache = {};
+    return function(x) {
+        if (cache.hasOwnProperty(x)) return cache[x];
+        cache[x] = cb(x);
+        return cache[x];
+    }
+}
+function multi(x){
+    return x*x;
+}
+
+const Init = cacheFunction(multi);
+
+console.log(Init( 5));
+console.log(Init( 5));
+
+//-----------------------------------------------------------------------------------------------------------------------
 function CadenaInvertida(str) {
     // Instrucción:
     // Dada una cadena, escriba una función recursiva para devolver la cadena invertida. */// Ejemplo:
@@ -21,7 +39,15 @@ function CadenaInvertida(str) {
     // Aqui tu codigo
 
 }
+function CadenaInvertida(str) {
+    if (str === ""){
+        return "";
+    }
+       return CadenaInvertida(str.substr(1)) + str.charAt(0);
+}
 
+console.log(CadenaInvertida("divoc"))
+//-----------------------------------------------------------------------------------------------------------------------
 function EnteroMasGrande(array) {
     // Instruction:
     //Dada una matriz, escriba una función recursiva para encontrar el entero más grande en una matriz. */// Ejemplos:
@@ -31,6 +57,25 @@ function EnteroMasGrande(array) {
     // => 8
     //Aqui tu codigo
 }
+
+function EnteroMasGrande(array) {
+
+    if (array.length === 1){ 
+        return array[0]
+    } else{
+
+    if(array[0]>array[array.length-1]){
+        array.pop()
+        return EnteroMasGrande(array) 
+    }else {
+        array.shift()
+       return EnteroMasGrande(array)
+    }
+}
+}
+console.log(EnteroMasGrande([3, 1, 6, 8, 2, 4, 5]))
+
+//-----------------------------------------------------------------------------------------------------------------------
 function Permutaciones(str){
     
 // Instrucción:
@@ -41,3 +86,24 @@ function Permutaciones(str){
 // => ["aabc", "aacb", "abac", "abca", "acab", "acba", "baac", "baca", "bcaa", "caab", "caba", " cbaa"]
 //Aqui tu codigo
 }
+function Permutaciones(str){
+    var permutado = [];
+
+    if(str.length === 1){
+        permutado.push(str)
+        return permutado
+    }
+
+    for(var i=0; i<str.length; i++){
+        var first = str[i];
+        var second = str.substring(0,i) + str.substring(i+1);
+        var psecond = Permutaciones(second);
+
+        for(var j=0; j<psecond.length; j++){
+            permutado.push(first + psecond[j])
+        }
+    }
+    return permutado;    
+    
+}
+console.log(Permutaciones('abc'));

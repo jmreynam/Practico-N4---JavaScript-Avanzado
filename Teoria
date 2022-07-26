@@ -1,20 +1,49 @@
 Explica los siguentes conceptos con tus propias palabras.
 
-
 1- Scope
+El scope se define como el alcance que tiene una variable en el código, el mismo decide decide a qué variables 
+tienes acceso en cada parte del código. Existen dos tipos de scope, el scope global y el scope local. El scope local
+permite acceder a una variable unicamente en cierta parte del codigo un claro ejemplo son las variables declaradas 
+dentro de una función, por otro lado, el scope global permite acceder avariables declaradas fuera de funciones, 
+permitiendo acceder a la misma tanto dentro como fuera de las funciones.
 
 2- Tipos de datos
+En JavaScript existen distintos tipos de datos, los cuales se dividen en dos grupos como Primitivos y de Objeto.
+Los tipos de datos Primitivos son inmutables, es decir, no pueden ser cambiados. Los tipo de datos de Objeto son valores
+en memoria a los cuales se accede mediante un identificador, son vistos como conjunto de propiedades.
 
 3- Operadores
+Los operadores permiten manipular el valor de las variables, realizar operaciones matemáticas con sus valores 
+y comparar diferentes variables. De esta forma, los operadores permiten a los programas realizar cálculos complejos 
+y tomar decisiones lógicas en función de comparaciones y otros tipos de condiciones.
 
 4- Coercion
+La coerción es la conversión automática o implícita de valores de un tipo de dato a otro, se debe a que JavaScript
+es un lenguaje de tipado blando en donde no es necesario especificar el tipo de dato que contendra la variable.
 
 5- Precedencia
+Los operadores permiten manipular el valor de las variables, realizar operaciones matemáticas con sus valores 
+y comparar diferentes variables. La precedencia determina el orden en el cual los operadores van a ser evaluados,
+aquellos con una precedencia más alta son evaluados primero.
 
 6- Bind
+La función bind() devuelve una copia de la función, la cúal tiene internamente asociado el keyword this al objeto 
+que le pasemos por parámetro. Al ejecutarse se crea una nueva funcion que nos permite manipular tanto su valor this,
+como asi tambien los parametros que esta espera.
 
 7- Apply
+La apply método llama a cualquier función indicandole el objeto que actuara como this dentro de la misma, y argumento 
+proporcionado como una matriz.
 
 8- Promesas
+Las promesas son útiles en solicitudes asíncronas, se usan para disminuir uso excesivo de callbacks en el desarrollo 
+de código. Una promesa se ejecuta y este luego de un estado pendiente devuelve dos valores: resuelto o no resuelto 
+lo que significa un error. Una analogía de la vida cotidiana sería en donde una persona tal, promete algo que se va a cumplir 
+en determinado tiempo a otra persona. 
+Luego de ese tiempo se tiene una determinada respuesta en donde la promesa realizada se "cumple" o se "falla".
+
 
 9- Recursividad
+Consiste en la acción de una función que se llama a si misma, es un método utilizado para resolver problemas
+dividiendolos en subproblemas más pequeños, una recursión puede recibir dos entradas
+un caso base, el cuál finaliza la recursión y un caso recursivo el cuál continúa con la recursión.
